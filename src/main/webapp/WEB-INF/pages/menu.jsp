@@ -10,7 +10,9 @@
           <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/about.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/about.jsp">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <%--  activePage is an attribute in the request. we use the value in that attribute to set the active class on the menu entries:
+          if the value of activePage is 'Cars' then output the CSS class active         --%>
+          <a class="nav-link ${activePage eq 'Books' ? 'active' : ''}" href="${pageContext.request.contextPath}/Books">Books</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
