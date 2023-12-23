@@ -19,7 +19,8 @@
         </li>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" hnef="${paqeContext.request.contextPath}/Register">Register</a>
+            <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/register.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/register.jsp">About</a>
+<%--            <a class="nav-link" href="${paqeContext.request.contextPath}/Register">Register</a>--%>
           </li>
         </ul>
         <ul class="navbar-nav">
