@@ -76,4 +76,14 @@ public class User {
         this.password = password;
     }
 
+    @OneToMany(mappedBy = "owner")
+    private Collection<Book> books;
+
+    public Collection<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Collection<Book> books) {
+        this.books = books;
+    }
 }
