@@ -58,14 +58,5 @@ public class Book {
         this.quantity = quantity;
     }
 
-    @ManyToOne
-    private User owner;
 
-    public User getOwner() {
-        return owner;
-    }
-
-    public void setOwner(User owner) {
-        this.owner = owner;
-    }
 }
