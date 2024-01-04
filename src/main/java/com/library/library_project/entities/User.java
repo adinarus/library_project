@@ -22,27 +22,27 @@ public class User {
     }
     @Column(name = "firstname")
     @Basic
-    private String name;
+    private String firstname;
 
-    public String getName() {
-        return name;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
+
     @Column(name = "lastname")
     @Basic
-    private String surname;
+    private String lastname;
 
-    public String getSurname() {
-        return surname;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
-
 
     @Column(name = "username")
     @Basic

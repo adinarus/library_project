@@ -11,8 +11,8 @@ public class DtoConverter{
         UserDto dto = new UserDto();
         if (user != null) {
             dto.setId(user.getId());
-            dto.setName(user.getName());     //might be optional
-            dto.setSurname(user.getSurname());     //might be optional
+            dto.setName(user.getLastname());     //might be optional
+            dto.setSurname(user.getFirstname());     //might be optional
             dto.setUsername(user.getUsername());
             dto.setEmail(user.getEmail());     //might be optional
             dto.setPassword(user.getPassword());     //might be optional
@@ -32,8 +32,8 @@ public class DtoConverter{
         User user = new User();
         if (dto != null) {
             user.setId(dto.getId());
-            user.setName(dto.getName());     //might be optional
-            user.setSurname(dto.getSurname());     //might be optional
+            user.setFirstname(dto.getName());     //might be optional
+            user.setLastname(dto.getSurname());     //might be optional
             user.setUsername(dto.getUsername());
             user.setEmail(dto.getEmail());     //might be optional
             user.setPassword(dto.getPassword());     //might be optional
