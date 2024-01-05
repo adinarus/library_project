@@ -7,6 +7,8 @@ import java.util.Collection;
 @Entity
 @Table (name="users")
 public class User {
+    @Id
+    @GeneratedValue
     @Column(name = "id")
     private int id;
 
@@ -15,8 +17,6 @@ public class User {
         this.id = id;
     }
 
-    @Id
-    @GeneratedValue
     public int getId() {
         return id;
     }

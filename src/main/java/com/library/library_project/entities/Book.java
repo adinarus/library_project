@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="books")
 public class Book {
+    @Id
+    @GeneratedValue
     @Column(name = "id")
     private int id;
 
@@ -12,8 +14,6 @@ public class Book {
         this.id = id;
     }
 
-    @Id
-    @GeneratedValue
     public int getId() {
         return id;
     }
