@@ -3,30 +3,38 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:pageTemplate pageTitle="Books">
-  <h1>Books</h1>
+  <h1>Carti</h1>
+  <a href="${pageContext.request.contextPath}/AddBook"
+      class="btn btn-primary btn-lg">
+      Adauga o carte
+  </a>
   <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        Book 1
+    <c:forEach var="book" items="${books}">
+      <div class="row">
+        <div class="col-sm-3" style="padding-top: 5px">
+            ${book.title}
+        </div>
+        <div class="col-sm-2" style="padding-top: 5px">
+            ${book.author}
+        </div>
+        <div class="col-sm-2" style="padding-top: 5px">
+            ${book.genre}
+        </div>
+        <div class="col-sm-1" style="padding-top: 5px">
+            ${book.quantity}
+        </div>
+        <div class="col-sm-1" style="padding-top: 5px">
+          <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditBook?id=${book.id}">
+            Editare
+          </a>
+        </div>
+        <div class="col-sm-1" style="padding-top: 5px">
+          <a class="btn btn-danger" href="${pageContext.request.contextPath}/DeleteBook?id=${book.id}">
+            Sterge
+          </a>
+        </div>
       </div>
-      <div class="col">
-        Author 1
-      </div>
-      <div class="col">
-        Nr copies: 1
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        Book 2
-      </div>
-      <div class="col">
-        Author 2
-      </div>
-      <div class="col">
-        Nr copies: 2
-      </div>
-    </div>
+    </c:forEach>
   </div>
-  <h5>Available books: ${numberOfAvailableBooks}</h5>
+  <h5>Carti valabile: ${numberOfAvailableBooks}</h5>
 </t:pageTemplate>

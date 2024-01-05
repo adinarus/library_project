@@ -10,6 +10,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Stateless
@@ -33,5 +34,25 @@ public class BookBean {
     public List<BookDto> copyBookstoDto(List<Book> books){
         DtoConverter converter=new DtoConverter();
         return converter.toDtoBooks(books);
+    }
+
+    public void createBook(String title,
+                           String author,
+                           String genre,
+                           int quantity){
+        LOG.info("createBook");
+
+        Book book= new Book();
+        book.setTitle(title);
+        book.setAuthor(author);
+        book.setGenre(genre);
+        book.setQuantity(quantity);
+
+        try {
+            entityManager.persist(book);
+        } catch (Exception e) {
+            LOG.log(Level.SEVERE, "Error during book creation", e);
+            throw new EJBException("Error during book creation", e);
+        }
     }
 }

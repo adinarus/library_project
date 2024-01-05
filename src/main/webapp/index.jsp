@@ -2,5 +2,5 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
 <t:pageTemplate pageTitle="Library">
-    <h1>Welcome to the Library!!!!</h1>
+    <h1>Bine ati venit!!!!</h1>
 </t:pageTemplate>
