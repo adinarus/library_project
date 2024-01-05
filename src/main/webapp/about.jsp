@@ -2,7 +2,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
 <t:pageTemplate pageTitle="Library">
-    <h1>About the Library</h1>
+    <h1>Despre biblioteca</h1>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam urna lectus, accumsan dictum pellentesque a, maximus vel turpis. Sed at lobortis turpis. Etiam id mollis metus. Curabitur vestibulum viverra eros, nec gravida ex fermentum vitae. Donec eros turpis, eleifend non lorem vitae, varius porta metus. Nullam dictum condimentum elit, vitae mollis sapien luctus et. Sed malesuada leo non finibus porttitor. Proin vitae pretium purus. Nunc sodales sapien erat, sed gravida enim blandit in. Mauris nec vulputate purus. Sed risus ex, sagittis ut ornare id, suscipit interdum dui. Nullam accumsan libero id lorem bibendum, dictum hendrerit augue sollicitudin. Aliquam erat volutpat.
     </p>

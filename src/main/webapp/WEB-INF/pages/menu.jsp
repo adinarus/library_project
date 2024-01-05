@@ -1,25 +1,25 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="${pageContext.request.contextPath}">Library</a>
+    <a class="navbar-brand" href="${pageContext.request.contextPath}">Biblioteca</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/about.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/about.jsp">About</a>
+          <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/about.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/about.jsp">Despre noi</a>
         </li>
         <li class="nav-item">
           <%--  activePage is an attribute in the request. we use the value in that attribute to set the active class on the menu entries:
           if the value of activePage is 'Cars' then output the CSS class active         --%>
-          <a class="nav-link ${activePage eq 'Books' ? 'active' : ''}" href="${pageContext.request.contextPath}/Books">Books</a>
+          <a class="nav-link ${activePage eq 'Books' ? 'active' : ''}" href="${pageContext.request.contextPath}/Books">Carti</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
         </li>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/register.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/register.jsp">About</a>
+            <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/register.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/register.jsp"></a>
 <%--            <a class="nav-link" href="${paqeContext.request.contextPath}/Register">Register</a>--%>
           </li>
         </ul>
