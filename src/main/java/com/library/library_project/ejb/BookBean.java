@@ -19,7 +19,7 @@ public class BookBean {
     EntityManager entityManager;
 
     public List<BookDto> findAllBooks(){
-        LOG.info("findAllCars");
+        LOG.info("findAllBooks");
         try{
             TypedQuery<Book> typedQuery=entityManager.createQuery("SELECT book FROM Book book",Book.class);
             List<Book> books=typedQuery.getResultList();
