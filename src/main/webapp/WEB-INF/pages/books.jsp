@@ -9,6 +9,16 @@
       Adauga o carte
   </a>
   <div class="container text-center">
+    <div class="row" style="font-weight: bold;">
+      <div class="col-sm-3" style="padding-top: 5px">Titlu</div>
+      <div class="col-sm-2" style="padding-top: 5px">Autor</div>
+      <div class="col-sm-2" style="padding-top: 5px">Gen</div>
+      <div class="col-sm-1" style="padding-top: 5px">Numar de exemplare</div>
+      <div class="col-sm-2" style="padding-top: 5px">Actiuni</div>
+    </div>
+
+    <hr style="border-top: 2px solid #6b6b6b; margin-top: 10px; margin-bottom: 10px;">
+
     <c:forEach var="book" items="${books}">
       <div class="row">
         <div class="col-sm-3" style="padding-top: 5px">
