@@ -49,9 +49,9 @@ public class DtoConverter{
             dto.setTitle(book.getTitle());
             dto.setAuthor(book.getAuthor());
             dto.setGenre(book.getGenre());
-            if(book.getOwner()!= null){
-                dto.setOwner(toDto(book.getOwner()));
-            }
+//            if(book.getOwner()!= null){
+//                dto.setOwner(toDto(book.getOwner()));
+//            }
             dto.setQuantity(book.getQuantity());
         }
         return dto;
@@ -63,9 +63,9 @@ public class DtoConverter{
             book.setTitle(dto.getTitle());
             book.setAuthor(dto.getAuthor());
             book.setGenre(dto.getGenre());
-            if(dto.getOwner() != null) {
-                book.setOwner(fromDto(dto.getOwner()));
-            }
+//            if(dto.getOwner() != null) {
+//                book.setOwner(fromDto(dto.getOwner()));
+//            }
             book.setQuantity(dto.getQuantity());
         }
         return book;

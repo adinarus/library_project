@@ -8,7 +8,18 @@ public class BookDto {
     private String author;
     private String genre;
     private int quantity;
-    private UserDto owner;
+
+
+    public BookDto(int id, String title, String author, String genre, int quantity) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.quantity = quantity;
+    }
+
+    public BookDto() {
+    }
 
     public int getId() {return id;}
 
@@ -43,12 +54,4 @@ public class BookDto {
     }
 
     public void setQuantity(int quantity) {this.quantity = quantity;}
-
-    public UserDto getOwner() {
-        return owner;
-    }
-
-    public void setOwner(UserDto owner) {
-        this.owner = owner;
-    }
 }
