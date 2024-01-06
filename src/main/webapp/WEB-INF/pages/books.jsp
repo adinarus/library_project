@@ -34,14 +34,25 @@
             ${book.quantity}
         </div>
         <div class="col-sm-1" style="padding-top: 5px">
-          <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditBook?id=${book.id}">
-            Editare
-          </a>
+          <c:if test="${pageContext.request.isUserInRole('grup2')}">
+            <a class="btn btn-secondary" href="${pageContext.request.contextPath}/BorrowBook?id=${book.id}">
+              Imprumuta
+            </a>
+          </c:if>
         </div>
         <div class="col-sm-1" style="padding-top: 5px">
-          <a class="btn btn-danger" href="${pageContext.request.contextPath}/DeleteBook?id=${book.id}">
-            Sterge
-          </a>
+          <c:if test="${pageContext.request.isUserInRole('grup1')}">
+            <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditBook?id=${book.id}">
+              Editare
+            </a>
+          </c:if>
+        </div>
+        <div class="col-sm-1" style="padding-top: 5px">
+          <c:if test="${pageContext.request.isUserInRole('grup1')}">
+            <a class="btn btn-danger" href="${pageContext.request.contextPath}/DeleteBook?id=${book.id}">
+              Sterge
+            </a>
+          </c:if>
         </div>
       </div>
     </c:forEach>
