@@ -55,4 +55,19 @@ public class BookBean {
             throw new EJBException("Error during book creation", e);
         }
     }
+
+    public BookDto findById(int bookId) {
+        Book book = entityManager.find(Book.class, bookId);
+        return new BookDto(book.getId(),book.getTitle(), book.getAuthor(), book.getGenre(), book.getQuantity());
+    }
+
+    public void updateBook(int bookId, String title, String author, String genre, int quantity) {
+        LOG.info("updateBook");
+
+        Book book=entityManager.find(Book.class,bookId);
+        book.setTitle(title);
+        book.setAuthor(author);
+        book.setGenre(genre);
+        book.setQuantity(quantity);
+    }
 }
