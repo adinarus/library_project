@@ -70,4 +70,16 @@ public class BookBean {
         book.setGenre(genre);
         book.setQuantity(quantity);
     }
+
+    public void deleteBook(int bookId) {
+        LOG.info("deleteBook");
+
+        Book book = entityManager.find(Book.class, bookId);
+        if (book != null) {
+            entityManager.remove(book);
+        } else {
+            LOG.log(Level.WARNING, "Book with id {0} not found", bookId);
+        }
+    }
+
 }
