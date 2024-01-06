@@ -14,7 +14,9 @@
         <li class="nav-item">
           <%--  activePage is an attribute in the request. we use the value in that attribute to set the active class on the menu entries:
           if the value of activePage is 'Cars' then output the CSS class active         --%>
-          <a class="nav-link ${activePage eq 'Books' ? 'active' : ''}" href="${pageContext.request.contextPath}/Books">Carti</a>
+            <c:if test="${pageContext.request.isUserInRole('grup2')}">
+              <a class="nav-link ${activePage eq 'Books' ? 'active' : ''}" href="${pageContext.request.contextPath}/Books">Carti</a>
+            </c:if>
         </li>
         <ul class="navbar-nav">
           <li class="nav-item">
