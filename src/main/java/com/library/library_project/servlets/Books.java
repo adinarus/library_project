@@ -11,9 +11,6 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 @DeclareRoles({"grup1", "grup2"})
-@ServletSecurity(value = @HttpConstraint(rolesAllowed = {"grup2"}),
-        httpMethodConstraints = {@HttpMethodConstraint(value = "POST", rolesAllowed =
-                {"grup1"})})
 @WebServlet(name = "Books", value = "/Books")
 public class Books extends HttpServlet {
     @Inject

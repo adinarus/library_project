@@ -4,10 +4,12 @@
 
 <t:pageTemplate pageTitle="Books">
   <h1>Carti</h1>
-  <a href="${pageContext.request.contextPath}/AddBook"
-      class="btn btn-primary btn-lg">
-      Adauga o carte
-  </a>
+    <c:if test="${pageContext.request.isUserInRole('grup1')}">
+      <a href="${pageContext.request.contextPath}/AddBook"
+          class="btn btn-primary btn-lg">
+          Adauga o carte
+      </a>
+    </c:if>
   <div class="container text-center">
     <div class="row" style="font-weight: bold;">
       <div class="col-sm-3" style="padding-top: 5px">Titlu</div>
