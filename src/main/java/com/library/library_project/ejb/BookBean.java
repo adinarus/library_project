@@ -82,4 +82,11 @@ public class BookBean {
         }
     }
 
+    public List<BookDto> searchBooks(String searchQuery) {
+        TypedQuery<Book> query = entityManager.createQuery(
+                "SELECT b FROM Book b WHERE b.title LIKE :searchQuery OR b.author LIKE :searchQuery OR b.genre LIKE :searchQuery", Book.class);
+        query.setParameter("searchQuery", "%" + searchQuery + "%");
+        List<Book> books = query.getResultList();
+        return copyBookstoDto(books);
+    }
 }

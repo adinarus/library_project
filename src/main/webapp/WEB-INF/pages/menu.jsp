@@ -14,9 +14,7 @@
         <li class="nav-item">
           <%--  activePage is an attribute in the request. we use the value in that attribute to set the active class on the menu entries:
           if the value of activePage is 'Cars' then output the CSS class active         --%>
-            <c:if test="${pageContext.request.isUserInRole('grup2')}">
-              <a class="nav-link ${activePage eq 'Books' ? 'active' : ''}" href="${pageContext.request.contextPath}/Books">Carti</a>
-            </c:if>
+              <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/books.jsp' ? ' active' : ''}" href="${pageContext.request.contextPath}/Books">Carti</a>
         </li>
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -37,9 +35,9 @@
           </li>
         </ul>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form action="${pageContext.request.contextPath}/SearchBook" method="GET" class="d-flex" role="search">
+        <input  type="text" name="searchQuery" placeholder="Cauta" class="form-control me-2">
+        <button type="submit" class="btn btn-outline-success">Cauta</button>
       </form>
     </div>
   </div>
