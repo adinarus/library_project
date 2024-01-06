@@ -25,14 +25,14 @@
       <div class="row">
         <div class="col-md-6 md-3">
           <label class="form-label" for="book_genre">Genul</label>
-          <select id="book_genre" class="form-select" value="none" name="book_genre">
-              <option value="">Comedie</option>
-              <option value="">Dragoste</option>
-              <option value="">Drama</option>
-              <option value="">Fantezie</option>
-              <option value="">Literatura universala</option>
-              <option value="">Literatura romana</option>
-              <option value="">Literatura clasica</option>
+          <select id="book_genre" class="form-select" name="book_genre">
+              <option value="Comedie">Comedie</option>
+              <option value="Dragoste">Dragoste</option>
+              <option value="Drama">Drama</option>
+              <option value="Fantezie">Fantezie</option>
+              <option value="Literatura universala">Literatura universala</option>
+              <option value="Literatura romana">Literatura romana</option>
+              <option value="Literatura clasica">Literatura clasica</option>
           </select>
           <div class="invalid-feedback">
               Genul cartii este necesar.
