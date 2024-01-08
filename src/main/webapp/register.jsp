@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<t:pageTemplate pageTitle="Registration form">
+<t:pageTemplate pageTitle="Inregistrare">
 
   <div class="signupFrm">
 <%--    <form action="<%=request.getContextPath()%>/register" method="post" class="form">--%>

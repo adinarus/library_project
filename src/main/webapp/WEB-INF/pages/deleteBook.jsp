@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<t:pageTemplate pageTitle="Delete Book">
+<t:pageTemplate pageTitle="Stergere Carte">
     <br/>
     <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/DeleteBook">
         <input type="hidden" name="book_id" value="${book.id}"> <!-- Câmp ascuns pentru ID -->
