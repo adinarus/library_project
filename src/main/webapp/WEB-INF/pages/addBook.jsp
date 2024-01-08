@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
-<t:pageTemplate pageTitle="Add Book">
+<t:pageTemplate pageTitle="Adaugare Carte">
   <br/>
   <form class="needs-validation" novalidate method="POST" action="${pageContext.request.contextPath}/AddBook">
       <div class="row">
