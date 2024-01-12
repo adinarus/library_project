@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="${pageContext.request.contextPath}">Biblioteca</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,13 +12,11 @@
           <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/about.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/about.jsp">Despre noi</a>
         </li>
         <li class="nav-item">
-          <%--  activePage is an attribute in the request. we use the value in that attribute to set the active class on the menu entries:
-          if the value of activePage is 'Cars' then output the CSS class active         --%>
               <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/books.jsp' ? ' active' : ''}" href="${pageContext.request.contextPath}/Books">Carti</a>
         </li>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/register.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/register.jsp"></a>
+            <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/register.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/register.jsp">Inregistrare</a>
 <%--            <a class="nav-link" href="${paqeContext.request.contextPath}/Register">Register</a>--%>
           </li>
         </ul>
@@ -37,7 +35,7 @@
       </ul>
       <form action="${pageContext.request.contextPath}/SearchBook" method="GET" class="d-flex" role="search">
         <input  type="text" name="searchQuery" placeholder="Cauta" class="form-control me-2">
-        <button type="submit" class="btn btn-outline-success">Cauta</button>
+        <button type="submit" class="searchBtn">Cauta</button>
       </form>
     </div>
   </div>
