@@ -17,6 +17,7 @@
             <p class="card-text">${book.author}</p>
             <p class="card-text">Gen: ${book.genre}</p>
             <p class="card-text">Disponibile: ${book.quantity}</p>
+              <img src="${pageContext.request.contextPath}/BookPhotos?id=${book.id}" width="170"/>
           </div>
           <div class="card-footer">
             <c:if test="${pageContext.request.isUserInRole('grup2') or pageContext.request.isUserInRole('grup1')}">
@@ -25,6 +26,7 @@
             <c:if test="${pageContext.request.isUserInRole('grup1')}">
               <a href="${pageContext.request.contextPath}/EditBook?id=${book.id}" class="btn btn-info">Editare</a>
               <a href="${pageContext.request.contextPath}/DeleteBook?id=${book.id}" class="btn btn-danger">Sterge</a>
+              <a href="${pageContext.request.contextPath}/AddBookPhoto?id=${book.id}" class="btn btn-danger">Adauga imagine</a>
             </c:if>
           </div>
       </div>

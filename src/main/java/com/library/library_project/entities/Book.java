@@ -69,4 +69,10 @@ public class Book {
     public void setOwner(User owner) {
         this.owner = owner;
     }
+
+    @OneToOne(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private BookPhoto photo;
+
+    public BookPhoto getPhoto() { return photo;}
+    public void setPhoto(BookPhoto photo) {this.photo=photo;}
 }
