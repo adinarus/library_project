@@ -49,6 +49,7 @@
         </div>
       </div>
       <br/>
-      <button type="submit" class="btn btn-primary btn-lg">Adauga carte</button>
+      <a href="${pageContext.request.contextPath}/Books" class="btn btn-secondary btn-lg">Renunță</a>
+      <button type="submit" class="btn btn-danger btn-lg">Adaugare carte</button>
   </form>
 </t:pageTemplate>

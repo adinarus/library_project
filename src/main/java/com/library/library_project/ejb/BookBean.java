@@ -1,8 +1,10 @@
 package com.library.library_project.ejb;
 
 import com.library.library_project.dto.BookDto;
+import com.library.library_project.dto.BookPhotoDto;
 import com.library.library_project.dto.DtoConverter;
 import com.library.library_project.entities.Book;
+import com.library.library_project.entities.BookPhoto;
 import jakarta.ejb.EJBException;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
@@ -88,5 +90,32 @@ public class BookBean {
         query.setParameter("searchQuery", "%" + searchQuery + "%");
         List<Book> books = query.getResultList();
         return copyBookstoDto(books);
+    }
+
+    public void addPhotoToBook(int bookId, String filename, String fileType, byte[] fileContent) {
+        LOG.info("addPhotoToCar");
+        BookPhoto photo = new BookPhoto();
+        photo.setFilename(filename);
+        photo.setFileType(fileType);
+        photo.setFileContent(fileContent);
+        Book book = entityManager.find(Book.class, bookId);
+        if (book.getPhoto() != null) {
+            entityManager.remove(book.getPhoto());
+        }
+        book.setPhoto(photo);
+        photo.setBook(book);
+        entityManager.persist(photo);
+    }
+    public BookPhotoDto findPhotoByCarId(Integer bookId) {
+        List<BookPhoto> photos = entityManager
+                .createQuery("SELECT p FROM BookPhoto p where p.book.id = :id", BookPhoto.class)
+                .setParameter("id", bookId)
+                .getResultList();
+        if (photos.isEmpty()) {
+            return null;
+        }
+        BookPhoto photo = photos.get(0); // the first element
+        return new BookPhotoDto(photo.getId(), photo.getFilename(), photo.getFileType(),
+                photo.getFileContent());
     }
 }

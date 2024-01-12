@@ -50,6 +50,7 @@
             </div>
         </div>
         <br/>
+        <a href="${pageContext.request.contextPath}/Books" class="btn btn-secondary btn-lg">Renunță</a>
         <button type="submit" class="btn btn-primary btn-lg">Editare carte</button>
     </form>
 </t:pageTemplate>
