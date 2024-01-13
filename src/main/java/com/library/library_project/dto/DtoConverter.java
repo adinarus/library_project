@@ -28,7 +28,7 @@ public class DtoConverter{
         }
         return ret;
     }
-    public User fromDto(UserDto dto) {
+    public User fromDtoUsers(UserDto dto) {
         User user = new User();
         if (dto != null) {
             user.setId(dto.getId());
