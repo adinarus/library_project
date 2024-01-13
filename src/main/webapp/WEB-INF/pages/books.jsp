@@ -17,7 +17,7 @@
             <p class="card-text">${book.author}</p>
             <p class="card-text">Gen: ${book.genre}</p>
             <p class="card-text">Disponibile: ${book.quantity}</p>
-              <img src="${pageContext.request.contextPath}/BookPhotos?id=${book.id}" width="170"/>
+              <img src="${pageContext.request.contextPath}/BookPhotos?id=${book.id}" class="card-img"/>
           </div>
           <div class="card-footer">
             <c:if test="${pageContext.request.isUserInRole('grup2') or pageContext.request.isUserInRole('grup1')}">
