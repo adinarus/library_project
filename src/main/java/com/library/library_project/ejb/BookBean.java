@@ -5,13 +5,10 @@ import com.library.library_project.dto.BookPhotoDto;
 import com.library.library_project.dto.DtoConverter;
 import com.library.library_project.entities.Book;
 import com.library.library_project.entities.BookPhoto;
-import com.library.library_project.entities.BorrowedBooks;
-import com.library.library_project.entities.User;
+import com.library.library_project.entities.BorrowedBook;
 import jakarta.ejb.EJBException;
 import jakarta.ejb.Stateless;
-import jakarta.faces.context.FacesContext;
 import jakarta.persistence.*;
-import jakarta.transaction.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -125,7 +122,7 @@ public class BookBean {
     public String borrowBook(int id,String username){
         try {
             Query check=entityManager.createQuery(
-                    "select count(b) from BorrowedBooks b where b.book_id=:bookId and b.user_id= (select u.id from User u where u.username= :username)");
+                    "select count(b) from BorrowedBook b where b.book_id=:bookId and b.user_id= (select u.id from User u where u.username= :username)");
             check.setParameter("bookId",id);
             check.setParameter("username",username);
 
@@ -135,7 +132,7 @@ public class BookBean {
                 return "Deja ai imprumutat cartea respectiva";
             }
 
-            BorrowedBooks borrowedBooks=new BorrowedBooks();
+            BorrowedBook borrowedBooks=new BorrowedBook();
             Query query=entityManager.createQuery(
                     "select u.id from User u where u.username= :username");
             query.setParameter("username",username);
@@ -172,13 +169,13 @@ public class BookBean {
             userId.setParameter("username",username);
             int user_id=(Integer) userId.getSingleResult();
             Query borrowedBooksQuery=entityManager.createQuery(
-                    "select borrowed from BorrowedBooks borrowed where borrowed.user_id= :id_user");
+                    "select borrowed from BorrowedBook borrowed where borrowed.user_id= :id_user");
             borrowedBooksQuery.setParameter("id_user",user_id);
 
-            List<BorrowedBooks> borrowedBooksList= borrowedBooksQuery.getResultList();
+            List<BorrowedBook> borrowedBooksList= borrowedBooksQuery.getResultList();
             List<BookDto> booksForMyLibrary= new ArrayList<>();
 
-            for (BorrowedBooks borrowedBooks:borrowedBooksList){
+            for (BorrowedBook borrowedBooks:borrowedBooksList){
                 int bookId=borrowedBooks.getBook_id();
                 BookDto bookDto=findBookById(bookId);
 
@@ -215,7 +212,7 @@ public class BookBean {
         int userId=(Integer)query.getSingleResult();
 
         Query delete=entityManager.createQuery(
-                "delete from BorrowedBooks borrowed where borrowed.book_id= :id and borrowed.user_id= :userId");
+                "delete from BorrowedBook borrowed where borrowed.book_id= :id and borrowed.user_id= :userId");
         delete.setParameter("id",id);
         delete.setParameter("userId",userId);
 

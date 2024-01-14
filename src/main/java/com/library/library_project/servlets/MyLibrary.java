@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "myLibrary", value = "/myLibrary")
-public class myLibrary extends HttpServlet {
+public class MyLibrary extends HttpServlet {
     @Inject
     BookBean bookBean;
 
