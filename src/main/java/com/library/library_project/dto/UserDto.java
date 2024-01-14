@@ -13,6 +13,16 @@ public class UserDto {
     private String password;
     private Collection<Book> books;
 
+    public UserDto(int id, String firstname, String lastname, String username, String email) {
+        this.id = id;
+        this.surname = firstname;
+        this.name = lastname;
+        this.username = username;
+        this.email = email;
+    }
+
+    public UserDto() {
+    }
 
     public void setId(int id) {
         this.id = id;

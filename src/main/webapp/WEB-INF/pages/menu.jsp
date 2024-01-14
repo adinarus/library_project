@@ -14,12 +14,25 @@
         <li class="nav-item">
               <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/books.jsp' ? ' active' : ''}" href="${pageContext.request.contextPath}/Books">Carti</a>
         </li>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/register.jsp' ? ' active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/register.jsp">Inregistrare</a>
-<%--            <a class="nav-link" href="${paqeContext.request.contextPath}/Register">Register</a>--%>
-          </li>
-        </ul>
+
+          <!-- Verifies if the user is part of the required group and shows the menu accordingly -->
+          <c:if test="${pageContext.request.isUserInRole('grup1')}">
+              <li class="nav-item">
+                  <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/users.jsp' ? ' active' : ''}" href="${pageContext.request.contextPath}/Users">Utilizatori</a>
+              </li>
+          </c:if>
+
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <c:choose>
+                      <c:when test="${pageContext.request.getRemoteUser() == null}">
+                          <a class="nav-link" href="${pageContext.request.contextPath}/Signup">Inregistrare</a>
+                      </c:when>
+                      <c:otherwise>
+                      </c:otherwise>
+                  </c:choose>
+              </li>
+          </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
               <c:choose>
