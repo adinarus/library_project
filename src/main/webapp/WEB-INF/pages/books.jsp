@@ -4,6 +4,11 @@
 
 <t:pageTemplate pageTitle="Lista Cărți">
   <h1 class="page-title">Lista Cărți</h1>
+  <c:if test="${not empty borrowMessage}">
+    <div class="alert alert-danger" role="alert">
+        ${borrowMessage}
+    </div>
+  </c:if>
   <c:if test="${pageContext.request.isUserInRole('grup1')}">
     <a href="${pageContext.request.contextPath}/AddBook" class="btn btn-primary btn-lg">Adauga o carte</a>
   </c:if>
@@ -21,7 +26,14 @@
           </div>
           <div class="card-footer">
             <c:if test="${pageContext.request.isUserInRole('grup2') or pageContext.request.isUserInRole('grup1')}">
-              <a href="${pageContext.request.contextPath}/BorrowBook?id=${book.id}" class="btn btn-secondary">Imprumuta</a>
+              <c:choose>
+                <c:when test="${book.quantity!=0}">
+                  <a href="${pageContext.request.contextPath}/BorrowBook?id_book=${book.id}" class="btn btn-secondary">Imprumuta</a>
+                </c:when>
+                <c:otherwise>
+                  Cartea nu mai e disponibila!
+                </c:otherwise>
+              </c:choose>
             </c:if>
             <c:if test="${pageContext.request.isUserInRole('grup1')}">
               <a href="${pageContext.request.contextPath}/EditBook?id=${book.id}" class="btn btn-info">Editare</a>
