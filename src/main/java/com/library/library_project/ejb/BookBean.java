@@ -106,7 +106,7 @@ public class BookBean {
         photo.setBook(book);
         entityManager.persist(photo);
     }
-    public BookPhotoDto findPhotoByCarId(Integer bookId) {
+    public BookPhotoDto findPhotoByBookId(Integer bookId) {
         List<BookPhoto> photos = entityManager
                 .createQuery("SELECT p FROM BookPhoto p where p.book.id = :id", BookPhoto.class)
                 .setParameter("id", bookId)
