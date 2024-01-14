@@ -73,14 +73,25 @@ public class BookBean {
         book.setQuantity(quantity);
     }
 
-    public void deleteBook(int bookId) {
+    public String deleteBook(int bookId) {
         LOG.info("deleteBook");
+
+        // verific daca cartea este împrumutata
+        Query query = entityManager.createQuery(
+                "SELECT count(b) FROM BorrowedBook b WHERE b.book_id = :bookId");
+        query.setParameter("bookId", bookId);
+
+        long count = (Long) query.getSingleResult();
+        if (count > 0) {
+            return "Cartea este împrumutată în prezent și nu poate fi ștearsă.";
+        }
 
         Book book = entityManager.find(Book.class, bookId);
         if (book != null) {
             entityManager.remove(book);
+            return "Cartea a fost ștearsă cu succes.";
         } else {
-            LOG.log(Level.WARNING, "Book with id {0} not found", bookId);
+            return "Cartea nu a fost găsită.";
         }
     }
 

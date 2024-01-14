@@ -4,6 +4,12 @@
 
 <t:pageTemplate pageTitle="Lista Cărți">
   <h1 class="page-title">Lista Cărți</h1>
+  <c:if test="${not empty sessionScope.deleteMessage}">
+    <div class="alert alert-danger" role="alert">
+        ${sessionScope.deleteMessage}
+    </div>
+    <c:remove var="deleteMessage" scope="session" />
+  </c:if>
   <c:if test="${not empty borrowMessage}">
     <div class="alert alert-danger" role="alert">
         ${borrowMessage}
