@@ -45,6 +45,11 @@
               </c:choose>
           </li>
         </ul>
+          <c:if test="${pageContext.request.getRemoteUser() != null}">
+              <li class="nav-item">
+                  <a class="nav-link ${pageContext.request.requestURI.substring(pageContext.request.requestURI.lastIndexOf("/")) eq '/myLibrary.jsp' ? ' active' : ''}" href="myLibrary">Biblioteca mea</a>
+              </li>
+          </c:if>
       </ul>
       <form action="${pageContext.request.contextPath}/SearchBook" method="GET" class="d-flex" role="search">
         <input  type="text" name="searchQuery" placeholder="Cauta" class="form-control me-2">
