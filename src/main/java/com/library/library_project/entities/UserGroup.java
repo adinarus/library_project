@@ -5,12 +5,17 @@ import jakarta.persistence.*;
 import java.util.Collection;
 
 @Entity
+@Table(name = "usergroups")
 public class UserGroup {
-    private Long id;
-    private String username;
-    private String userGroup;
     @Id
     @GeneratedValue
+    Long id;
+    @Column(name="username")
+    String username;
+
+    @Column(name="groupname")
+    String userGroup;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
         return id;
     }
