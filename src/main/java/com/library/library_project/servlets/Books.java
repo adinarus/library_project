@@ -19,6 +19,7 @@ public class Books extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<BookDto> books=bookBean.findAllBooks();
         request.setAttribute("books",books);
+        request.setAttribute("numberOfAvailableBooks",2);
         request.getRequestDispatcher("/WEB-INF/pages/books.jsp").forward(request,response);
     }
 
