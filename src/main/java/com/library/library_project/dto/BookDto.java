@@ -9,8 +9,6 @@ public class BookDto {
     private String genre;
     private int quantity;
 
-    private int owner;
-
 
     public BookDto(int id, String title, String author, String genre, int quantity) {
         this.id = id;
@@ -56,12 +54,4 @@ public class BookDto {
     }
 
     public void setQuantity(int quantity) {this.quantity = quantity;}
-
-    public int getOwner() {
-        return owner;
-    }
-
-    public void setOwner(int owner) {
-        this.owner = owner;
-    }
 }
