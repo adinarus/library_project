@@ -31,7 +31,9 @@ public class DeleteBook extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int bookId = Integer.parseInt(request.getParameter("book_id"));
-        bookBean.deleteBook(bookId);
+        String resultMessage = bookBean.deleteBook(bookId);
+
+        request.getSession().setAttribute("deleteMessage", resultMessage);
         response.sendRedirect(request.getContextPath()+"/Books");
     }
 
