@@ -58,18 +58,6 @@ public class Book {
         this.quantity = quantity;
     }
 
-
-    @ManyToOne
-    private User owner;
-
-    public User getOwner() {
-        return owner;
-    }
-
-    public void setOwner(User owner) {
-        this.owner = owner;
-    }
-
     @OneToOne(mappedBy = "book", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private BookPhoto photo;
 
