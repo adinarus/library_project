@@ -11,7 +11,7 @@
         <div class="row">
             <c:forEach var="users" items="${users}" varStatus="loop">
             <!-- Folosim col-md-4 pentru a avea 3 cărți pe rând pe ecrane medii și mari -->
-            <div class="col-md-4">
+            <div class="col-md">
                 <div class="card-body">
                     <h5 class="card-text">Prenume: ${users.surname}</h5>
                     <p class="card-text">Nume: ${users.name}</p>
