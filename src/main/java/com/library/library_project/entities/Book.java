@@ -58,6 +58,18 @@ public class Book {
         this.quantity = quantity;
     }
 
+    public Book() {
+
+    }
+
+    public Book(int id, String title, String author, String genre, int quantity) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.quantity = quantity;
+    }
+
 
     @ManyToOne
     private User owner;
