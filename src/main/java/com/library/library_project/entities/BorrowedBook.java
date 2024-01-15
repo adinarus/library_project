@@ -2,6 +2,8 @@ package com.library.library_project.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name="borrowed_books")
 public class BorrowedBook {
@@ -15,6 +17,8 @@ public class BorrowedBook {
 
     @Column(name="book_id")
     private int book_id;
+    @Column(name="deadline")
+    private LocalDateTime deadline;
 
     public int getId() {
         return id;
@@ -38,5 +42,13 @@ public class BorrowedBook {
 
     public void setBook_id(int book_id) {
         this.book_id = book_id;
+    }
+
+    public LocalDateTime getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(LocalDateTime deadline) {
+        this.deadline = deadline;
     }
 }
