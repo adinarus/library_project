@@ -30,8 +30,9 @@ public class EditBook extends HttpServlet {
         String genre=request.getParameter("book_genre");
         int quantity=Integer.parseInt(request.getParameter("book_quantity"));
         int bookId=Integer.parseInt(request.getParameter("book_id"));
+        String pdfUrl=request.getParameter("book_pdfUrl");
 
-        bookBean.updateBook(bookId, title,author,genre,quantity);
+        bookBean.updateBook(bookId, title,author,genre,quantity,pdfUrl);
         response.sendRedirect(request.getContextPath()+"/Books");
     }
 }

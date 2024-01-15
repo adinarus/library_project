@@ -50,6 +50,15 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6 md-3">
+                <label class="form-label" for="book_pdfUrl">URL PDF</label>
+                <input type="text" class="form-control" id="book_pdfUrl" name="book_pdfUrl" placeholder="Introduceți URL-ul PDF" value="${book.pdfUrl}">
+                <div class="invalid-feedback">
+                    URL-ul PDF al cărții este necesar.
+                </div>
+            </div>
+        </div>
         <br/>
         <a href="${pageContext.request.contextPath}/Books" class="btn btn-secondary btn-lg">Renunță</a>
         <button type="submit" class="btn btn-primary btn-lg">Editare carte</button>

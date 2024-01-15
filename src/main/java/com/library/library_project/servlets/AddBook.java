@@ -23,8 +23,9 @@ public class AddBook extends HttpServlet {
         String author=request.getParameter("book_author");
         String genre=request.getParameter("book_genre");
         int quantity=Integer.parseInt(request.getParameter("book_quantity"));
+        String pdfUrl=request.getParameter("book_pdfUrl");
 
-        bookBean.createBook(title,author,genre,quantity);
+        bookBean.createBook(title,author,genre,quantity,pdfUrl);
         response.sendRedirect(request.getContextPath()+"/Books");
     }
 }

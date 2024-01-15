@@ -29,6 +29,12 @@
                 <input type="text" class="form-control" id="book_quantity" name="book_quantity" value="${book.quantity}" readonly>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label" for="book_pdfUrl">URL PDF</label>
+                <input type="text" class="form-control" id="book_pdfUrl" name="book_pdfUrl" value="${book.pdfUrl}" readonly>
+            </div>
+        </div>
         <br/>
         <a href="${pageContext.request.contextPath}/Books" class="btn btn-secondary btn-lg">Renunță</a>
         <button type="submit" class="btn btn-danger btn-lg">Confirmare ștergere</button>

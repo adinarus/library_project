@@ -25,6 +25,9 @@ public class Book {
     private String genre;
     @Column(name = "quantity")
     private int quantity;
+
+    @Column(name = "pdf_url")
+    private String pdfUrl;
     public Book() {
 
     }
@@ -72,4 +75,12 @@ public class Book {
 
     public BookPhoto getPhoto() { return photo;}
     public void setPhoto(BookPhoto photo) {this.photo=photo;}
+
+    public String getPdfUrl() {
+        return pdfUrl;
+    }
+
+    public void setPdfUrl(String pdfUrl) {
+        this.pdfUrl = pdfUrl;
+    }
 }
