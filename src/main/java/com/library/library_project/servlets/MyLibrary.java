@@ -20,7 +20,7 @@ public class MyLibrary extends HttpServlet {
         String username=request.getUserPrincipal().getName();
         List<BookDto> borrowedBooks=bookBean.findBooksForMyLibrary(username);
         request.setAttribute("borrowedbooks",borrowedBooks);
-        request.getRequestDispatcher("/myLibrary.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/pages/myLibrary.jsp").forward(request,response);
     }
 
     @Override

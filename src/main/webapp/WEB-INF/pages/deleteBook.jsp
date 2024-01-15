@@ -33,6 +33,8 @@
         <a href="${pageContext.request.contextPath}/Books" class="btn btn-secondary btn-lg">Renunță</a>
         <button type="submit" class="btn btn-danger btn-lg">Confirmare ștergere</button>
     </form>
+    <br/>
+    <br/>
 </t:pageTemplate>
 
 
