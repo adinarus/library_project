@@ -10,6 +10,9 @@ import jakarta.ejb.EJBException;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.*;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -165,6 +168,10 @@ public class BookBean {
             borrowedBooks.setBook_id(id);
             borrowedBooks.setUser_id(userId);
 
+            //setare deadline
+            LocalDateTime deadline = LocalDateTime.now().plus(20, ChronoUnit.DAYS);
+            borrowedBooks.setDeadline(deadline);
+
             //persist=add
             entityManager.persist(borrowedBooks);
             return null;
@@ -191,7 +198,20 @@ public class BookBean {
             for (BorrowedBook borrowedBooks:borrowedBooksList){
                 int bookId=borrowedBooks.getBook_id();
                 BookDto bookDto=findBookById(bookId);
+                LocalDateTime deadline = borrowedBooks.getDeadline();
 
+                if (deadline != null) {
+                    bookDto.setDeadline(deadline);
+
+                    Duration duration = Duration.between(LocalDateTime.now(), deadline);
+                    long daysRemaining = duration.toDays();
+                    long hoursRemaining = duration.toHours() % 24;
+                    long minutesRemaining = duration.toMinutes() % 60;
+
+                    bookDto.setDaysRemaining(daysRemaining);
+                    bookDto.setHoursRemaining(hoursRemaining);
+                    bookDto.setMinutesRemaining(minutesRemaining);
+                }
                 booksForMyLibrary.add(bookDto);
             }
 

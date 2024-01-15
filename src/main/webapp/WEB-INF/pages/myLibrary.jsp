@@ -19,6 +19,9 @@
                     <img src="${pageContext.request.contextPath}/BookPhotos?id=${borrowedbook.id}" class="card-img"/>
                     <br/>
                     <br/>
+                    <p>
+                        Timp rămas: ${borrowedbook.daysRemaining} zile ${borrowedbook.hoursRemaining} ore ${borrowedbook.minutesRemaining} minute
+                    </p>
                     <a href="${pageContext.request.contextPath}/ReturnBook?id=${borrowedbook.id}" class="btn btn-info">Returneaza carte</a>
                     <a href="${borrowedbook.pdfUrl}" class="btn btn-info">Citeste carte</a>
 
