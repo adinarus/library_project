@@ -8,7 +8,8 @@
         <class>com.library.library_project.entities.User</class>
         <class>com.library.library_project.entities.Book</class>
         <class>com.library.library_project.entities.BookPhoto</class>
-
+        <class>com.library.library_project.entities.BorrowedBook</class>
+        <class>com.library.library_project.entities.UserGroup</class>
         <properties>
             <property name="jakarta.persistence.schema-generation.database.action" value="create-or-extend-tables"/>
         </properties>
