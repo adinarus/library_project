@@ -20,7 +20,7 @@
                     <br/>
                     <br/>
                     <a href="${pageContext.request.contextPath}/ReturnBook?id=${borrowedbook.id}" class="btn btn-info">Returneaza carte</a>
-                    <a href="https://www.azlyrics.com/lyrics/rickastley/nevergonnagiveyouup.html" class="btn btn-info">Citeste carte</a>
+                    <a href="${borrowedbook.pdfUrl}" class="btn btn-info">Citeste carte</a>
 
                 </div>
             </div>

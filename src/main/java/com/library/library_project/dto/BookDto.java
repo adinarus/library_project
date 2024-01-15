@@ -11,13 +11,16 @@ public class BookDto {
 
     private int owner;
 
+    private String pdfUrl;
 
-    public BookDto(int id, String title, String author, String genre, int quantity) {
+
+    public BookDto(int id, String title, String author, String genre, int quantity, String pdfUrl) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.quantity = quantity;
+        this.pdfUrl = pdfUrl;
     }
 
     public BookDto() {
@@ -63,5 +66,13 @@ public class BookDto {
 
     public void setOwner(int owner) {
         this.owner = owner;
+    }
+
+    public String getPdfUrl() {
+        return pdfUrl;
+    }
+
+    public void setPdfUrl(String pdfUrl) {
+        this.pdfUrl = pdfUrl;
     }
 }

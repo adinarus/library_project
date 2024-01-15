@@ -41,7 +41,7 @@ public class BookBean {
     public void createBook(String title,
                            String author,
                            String genre,
-                           int quantity){
+                           int quantity, String pdfUrl){
         LOG.info("createBook");
 
         Book book= new Book();
@@ -49,6 +49,7 @@ public class BookBean {
         book.setAuthor(author);
         book.setGenre(genre);
         book.setQuantity(quantity);
+        book.setPdfUrl(pdfUrl);
 
         try {
             entityManager.persist(book);
@@ -60,10 +61,10 @@ public class BookBean {
 
     public BookDto findById(int bookId) {
         Book book = entityManager.find(Book.class, bookId);
-        return new BookDto(book.getId(),book.getTitle(), book.getAuthor(), book.getGenre(), book.getQuantity());
+        return new BookDto(book.getId(),book.getTitle(), book.getAuthor(), book.getGenre(), book.getQuantity(),book.getPdfUrl());
     }
 
-    public void updateBook(int bookId, String title, String author, String genre, int quantity) {
+    public void updateBook(int bookId, String title, String author, String genre, int quantity, String pdfUrl) {
         LOG.info("updateBook");
 
         Book book=entityManager.find(Book.class,bookId);
@@ -71,6 +72,7 @@ public class BookBean {
         book.setAuthor(author);
         book.setGenre(genre);
         book.setQuantity(quantity);
+        book.setPdfUrl(pdfUrl);
     }
 
     public String deleteBook(int bookId) {
@@ -208,7 +210,7 @@ public class BookBean {
 
             Book book = (Book) bookQuery.getSingleResult();
 
-            return new BookDto(book.getId(), book.getTitle(), book.getAuthor(), book.getGenre(), book.getQuantity());
+            return new BookDto(book.getId(), book.getTitle(), book.getAuthor(), book.getGenre(), book.getQuantity(),book.getPdfUrl());
         }
         catch (NoResultException e){
             return null;
