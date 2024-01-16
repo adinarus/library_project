@@ -67,14 +67,6 @@ public class BookDto {
 
     public void setQuantity(int quantity) {this.quantity = quantity;}
 
-    public int getOwner() {
-        return owner;
-    }
-
-    public void setOwner(int owner) {
-        this.owner = owner;
-    }
-
     public String getPdfUrl() {
         return pdfUrl;
     }
@@ -114,4 +106,5 @@ public class BookDto {
     public void setHoursRemaining(long hoursRemaining) {
         this.hoursRemaining = hoursRemaining;
     }
+
 }

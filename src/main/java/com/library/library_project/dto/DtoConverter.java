@@ -11,12 +11,12 @@ public class DtoConverter{
         UserDto dto = new UserDto();
         if (user != null) {
             dto.setId(user.getId());
-            dto.setName(user.getLastname());     //might be optional
-            dto.setSurname(user.getFirstname());     //might be optional
+            dto.setName(user.getLastname());
+            dto.setSurname(user.getFirstname());
             dto.setUsername(user.getUsername());
-            dto.setEmail(user.getEmail());     //might be optional
-            dto.setPassword(user.getPassword());     //might be optional
-            //dto.setBooks(user.getBooks());
+            dto.setEmail(user.getEmail());
+            dto.setPassword(user.getPassword());
+
         }
         return dto;
     }
@@ -32,12 +32,12 @@ public class DtoConverter{
         User user = new User();
         if (dto != null) {
             user.setId(dto.getId());
-            user.setFirstname(dto.getName());     //might be optional
-            user.setLastname(dto.getSurname());     //might be optional
+            user.setFirstname(dto.getName());
+            user.setLastname(dto.getSurname());
             user.setUsername(dto.getUsername());
-            user.setEmail(dto.getEmail());     //might be optional
-            user.setPassword(dto.getPassword());     //might be optional
-            //user.setBooks(dto.getBooks());
+            user.setEmail(dto.getEmail());
+            user.setPassword(dto.getPassword());
+
         }
         return user;
     }
@@ -49,9 +49,6 @@ public class DtoConverter{
             dto.setTitle(book.getTitle());
             dto.setAuthor(book.getAuthor());
             dto.setGenre(book.getGenre());
-//            if(book.getOwner()!= null){
-//                dto.setOwner(toDto(book.getOwner()));
-//            }
             dto.setQuantity(book.getQuantity());
         }
         return dto;
@@ -63,9 +60,6 @@ public class DtoConverter{
             book.setTitle(dto.getTitle());
             book.setAuthor(dto.getAuthor());
             book.setGenre(dto.getGenre());
-//            if(dto.getOwner() != null) {
-//                book.setOwner(fromDto(dto.getOwner()));
-//            }
             book.setQuantity(dto.getQuantity());
         }
         return book;

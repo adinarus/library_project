@@ -47,8 +47,6 @@ public class BookBeanTest {
         // Arrange
         int bookId = 1;
         Book book = new Book(bookId, "The Great Gatsby", "F. Scott Fitzgerald", "Fiction", 5);
-
-        // Stubbing find to return the book with the given ID
         when(entityManager.find(Book.class, bookId)).thenReturn(book);
 
         // Act

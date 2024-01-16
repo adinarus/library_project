@@ -48,9 +48,9 @@ public class BookDtoTest {
         String author = "F. Scott Fitzgerald";
         String genre = "Fiction";
         int quantity = 5;
-
+        String pdfUrl = "Url";
         // Act
-        BookDto bookDto = new BookDto(id, title, author, genre, quantity);
+        BookDto bookDto = new BookDto(id, title, author, genre, quantity, pdfUrl);
 
         // Assert
         assertEquals(id, bookDto.getId());
@@ -58,5 +58,6 @@ public class BookDtoTest {
         assertEquals(author, bookDto.getAuthor());
         assertEquals(genre, bookDto.getGenre());
         assertEquals(quantity, bookDto.getQuantity());
+        assertEquals(pdfUrl, bookDto.getPdfUrl());
     }
 }
